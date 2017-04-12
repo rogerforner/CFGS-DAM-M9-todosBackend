@@ -13,5 +13,5 @@
 @endsection
 
 @section('main-content')
-    Contingut de la pàgina.
+    <tasks></tasks>
 @endsection

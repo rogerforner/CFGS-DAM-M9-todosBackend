@@ -16,6 +16,8 @@
     "bootstrap-sass": "3.3.7",
     "cross-env": "^3.2.3",
     "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
     "jquery": "^3.1.1",
