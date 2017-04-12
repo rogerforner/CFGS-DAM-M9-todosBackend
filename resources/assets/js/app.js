@@ -15,11 +15,11 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
-
 /**
  * Instanciem el component Tasks.vue
  */
 Vue.component('tasks', require('./components/Tasks.vue'));
+
+const app = new Vue({
+    el: '#app'
+});

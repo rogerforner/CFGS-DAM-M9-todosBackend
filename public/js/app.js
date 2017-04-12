@@ -22945,20 +22945,20 @@ __webpack_require__(41);
 
 Vue.component('example', __webpack_require__(46));
 
-var app = new Vue({
-  el: '#app'
-});
-
 /**
  * Instanciem el component Tasks.vue
  */
 Vue.component('tasks', __webpack_require__(48));
 
+var app = new Vue({
+  el: '#app'
+});
+
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: /home/roger/www/todosBackendVue/node_modules/mozjpeg/vendor/cjpeg: error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory\n\n    at Promise.all.then.arr (/home/roger/www/todosBackendVue/node_modules/execa/index.js:201:11)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\n    at runLoaders (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /home/roger/www/todosBackendVue/node_modules/img-loader/index.js:45:31");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 16 */
@@ -22970,7 +22970,7 @@ throw new Error("Module build failed: ModuleBuildError: Module build failed: Err
 /* 17 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Missing binding /home/roger/www/todosBackendVue/node_modules/node-sass/vendor/linux-x64-51/binding.node\nNode Sass could not find a binding for your current environment: Linux 64-bit with Node.js 7.x\n\nFound bindings for the following environments:\n  - Linux 64-bit with Node.js 6.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/home/roger/www/todosBackendVue/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/home/roger/www/todosBackendVue/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:571:32)\n    at Object.Module._extensions..js (module.js:580:10)\n    at Module.load (module.js:488:32)\n    at tryModuleLoad (module.js:447:12)\n    at Function.Module._load (module.js:439:3)\n    at Module.require (module.js:498:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/home/roger/www/todosBackendVue/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:571:32)\n    at Object.Module._extensions..js (module.js:580:10)\n    at Module.load (module.js:488:32)\n    at tryModuleLoad (module.js:447:12)\n    at Function.Module._load (module.js:439:3)\n    at Module.require (module.js:498:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/home/roger/www/todosBackendVue/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModule.js:179:3)\n    at NormalModule.build (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModule.js:268:15)\n    at Compilation.buildModule (/home/roger/www/todosBackendVue/node_modules/webpack/lib/Compilation.js:142:10)\n    at moduleFactory.create (/home/roger/www/todosBackendVue/node_modules/webpack/lib/Compilation.js:429:9)\n    at /home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModuleFactory.js:251:4\n    at /home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModuleFactory.js:93:13\n    at /home/roger/www/todosBackendVue/node_modules/tapable/lib/Tapable.js:204:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/home/roger/www/todosBackendVue/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/home/roger/www/todosBackendVue/node_modules/tapable/lib/Tapable.js:208:13)\n    at onDoneResolving (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModuleFactory.js:68:11)\n    at onDoneResolving (/home/roger/www/todosBackendVue/node_modules/webpack/lib/NormalModuleFactory.js:197:6)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 18 */
@@ -23924,10 +23924,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -23942,12 +23940,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 41 */
@@ -42072,7 +42071,7 @@ var Component = __webpack_require__(6)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/roger/www/todosBackendVue/resources/assets/js/components/Example.vue"
+Component.options.__file = "/home/rogerforner/Code/todosBackendVue/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42106,7 +42105,7 @@ var Component = __webpack_require__(6)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/roger/www/todosBackendVue/resources/assets/js/components/LoginInputField.vue"
+Component.options.__file = "/home/rogerforner/Code/todosBackendVue/resources/assets/js/components/LoginInputField.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] LoginInputField.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42140,7 +42139,7 @@ var Component = __webpack_require__(6)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/roger/www/todosBackendVue/resources/assets/js/components/Tasks.vue"
+Component.options.__file = "/home/rogerforner/Code/todosBackendVue/resources/assets/js/components/Tasks.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Tasks.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42261,7 +42260,34 @@ if (false) {
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "box box-default"
+  }, [_c('div', {
+    staticClass: "box-header with-border"
+  }, [_c('i', {
+    staticClass: "fa fa-plus"
+  }), _vm._v(" "), _c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("Add tasks")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "box box-default"
+  }, [_c('div', {
+    staticClass: "box-header with-border"
+  }, [_c('i', {
+    staticClass: "fa list"
+  }), _vm._v(" "), _c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("All tasks")])])])])])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {

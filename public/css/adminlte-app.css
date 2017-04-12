@@ -47,7 +47,7 @@ body {
   position: relative;
 }
 .layout-boxed {
-  background: url(/images/boxed-bg.jpg?7799dece2c79854f63f09e7dfa528b88) repeat fixed;
+  background: url(/images/vendor/admin-lte/dist/boxed-bg.jpg?5bbbd344130f0926b70aa3499638a387) repeat fixed;
 }
 /*
  * Content Wrapper - contains the main content
