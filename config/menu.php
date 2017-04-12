@@ -30,11 +30,11 @@ Menu::macro('sidebar', function () {
     return Menu::adminlteMenu()
         ->add(Html::raw('HEADER')->addParentClass('header'))
         ->action('HomeController@index', '<i class="fa fa-home"></i><span>Home</span>')
-        ->link('http://www.acacha.org', Menu::adminlteDefaultMenu('Another link'))
+        ->link('http://www.acacha.org', '<i class="fa fa-wikipedia-w"></i><span>Acacha</span>')
 //        ->url('http://www.google.com', 'Google')
         ->add(Menu::adminlteSeparator('Acacha Adminlte'))
         #adminlte_menu
-        ->add(Link::toUrl('/tasks', '<i class="fa fa-link"></i><span>Tasks</span>'))
+        ->add(Link::toUrl('/tasks', '<i class="fa fa-tasks"></i><span>Tasks</span>'))
         ->add(Menu::adminlteSeparator('SECONDARY MENU'))
         ->add(Menu::new()->prepend('<a href="#"><i class="fa fa-share"></i><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
             ->addParentClass('treeview')
