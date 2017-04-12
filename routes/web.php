@@ -11,14 +11,26 @@
 |
 */
 
+/**
+ * Ruta de la vista welcome
+ * resources/views/welcome.blade
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Les següents rutes estàn protegides. És a dir, si no estàs logat i hi intentes accedir
+ * et redirigeixen a la pàgina de login.
+ */
 Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
+    /**
+     * Ruta de la vista tasks
+     * resources/views/tasks.blade
+     */
+    Route::get('/tasks', function () {
+        return view('tasks');
+    });
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
