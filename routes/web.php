@@ -26,11 +26,9 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function () {
     /**
      * Ruta de la vista tasks
-     * resources/views/tasks.blade
+     * Http/Controllers/TaskController -> index()
      */
-    Route::get('/tasks', function () {
-        return view('tasks');
-    });
+    Route::resource('/tasks', 'TaskController');
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes

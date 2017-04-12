@@ -31,11 +31,11 @@ Menu::macro('sidebar', function () {
         ->add(Html::raw('HEADER')->addParentClass('header'))
         ->action('HomeController@index', '<i class="fa fa-home"></i><span>Home</span>')
 
-        ->add(Menu::adminlteSeparator('Acacha Adminlte'))
+        ->add(Menu::adminlteSeparator('ACTIVITIES'))
         #adminlte_menu
         ->add(Link::toUrl('/tasks', '<i class="fa fa-tasks"></i><span>Tasks</span>'))
 
-        ->add(Menu::adminlteSeparator('ENLLAÇOS EXTERNS'))
+        ->add(Menu::adminlteSeparator('EXTERNAL LINKS'))
         ->add(Menu::new()->prepend('<a href="#"><i class="fa fa-wikipedia-w"></i><span>Acacha</span> <i class="fa fa-angle-left pull-right"></i></a>')
             ->addParentClass('treeview')
             ->url('acacha.org', 'Acacha Wiki')->addClass('treeview-menu')

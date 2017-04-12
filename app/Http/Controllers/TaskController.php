@@ -13,7 +13,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        //On task.index fa referència a la carpeta tasks i fitxer index.blade.php de resources/views/
+        return view('tasks.index');
     }
 
     /**
