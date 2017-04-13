@@ -62,7 +62,7 @@
                     <i class="fa fa-list"></i> <h3 class="box-title">All tasks</h3>
                 </div>
                 <div class="box-body">
-                    <!-- Taula: llistar les tasques
+                    <!-- Taula: organitzar tasques
                     ================================================== -->
                     <table class="table table-bordered">
                         <tbody>
@@ -71,18 +71,22 @@
                             <th class="task-name">Tasks</th>
                             <th class="task-action">Actions</th>
                         </tr>
-                        <tr>
-                            <td class="task-id">1</td>
-                            <td class="task-name">A long time ago in a galaxy far, far away...</td>
-                            <td class="task-action">
-                                <button type="button" title="Edit" class="btn btn-warning">
-                                    <i class="fa fa-pencil"></i>
-                                </button>
-                                <button type="button" title="Trash" class="btn btn-danger">
-                                    <i class="fa fa-trash-o"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        <!-- Tasques
+                        ================================================== -->
+                        @foreach($tasks as $task)
+                            <tr>
+                                <td class="task-id">{{ $task->id }}</td>
+                                <td title="Created at {{ $task->created_at }}" class="task-name">{{ $task->name }}</td>
+                                <td class="task-action">
+                                    <button type="button" title="Edit" class="btn btn-warning">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                    <button type="button" title="Trash" class="btn btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div><!-- .box-body -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
 use Illuminate\Http\Request;
 use function redirect;
 
@@ -12,10 +13,15 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        //Obtenir totes les tasques de la DB, sense importar l'usuari que les ha creat.
+        $allTasks = Task::all();
+
         //On task.index fa referència a la carpeta tasks i fitxer index.blade.php de resources/views/
-        return view('tasks.index');
+        return view('tasks.index', [
+            'tasks' => $allTasks
+        ]);
     }
 
     /**
