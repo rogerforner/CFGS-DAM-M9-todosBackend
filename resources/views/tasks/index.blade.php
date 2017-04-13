@@ -14,6 +14,21 @@
 
 @section('main-content')
     <div class="container-fluid">
+        <!-- Tractament d'errors
+             https://laravel.com/docs/5.4/validation#form-request-validation
+             ================================================== -->
+        @if (count($errors) > 0)
+            <div class="row">
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             <div class="box box-default">
                 <div class="box-header with-border">
@@ -95,8 +110,4 @@
             text-align: center;
         }
     </style>
-
-    <script>
-
-    </script>
 @endsection
