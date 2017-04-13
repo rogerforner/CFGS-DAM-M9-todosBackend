@@ -20,16 +20,16 @@
                     <i class="fa fa-plus"></i> <h3 class="box-title">Add tasks</h3>
                 </div>
                 <div class="box-body">
-                    <!-- Form
+                    <!-- Formulari: crear tasques
                     ================================================== -->
                     <form action="{{ route('tasks.store') }}" method='POST'>
-                        <!-- Equivalent a: <input type="hidden" name="_token" value="{.{ csrf_token() }}"> -->
+                        {{-- srf_field() = <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
                         {{ csrf_field() }}
                         <div class="input-group">
                             <!-- Input: name
                             ================================================== -->
                             <input type="text" name="name" class="form-control">
-                            <!-- Button: submit
+                            <!-- Botó: submit
                             ================================================== -->
                             <span class="input-group-btn">
                               <button type="submit" class="btn btn-info btn-flat">Add task</button>
@@ -46,7 +46,7 @@
                     <i class="fa fa-list"></i> <h3 class="box-title">All tasks</h3>
                 </div>
                 <div class="box-body">
-                    <!-- Table: list all tasks
+                    <!-- Taula: llistar les tasques
                     ================================================== -->
                     <table class="table table-bordered">
                         <tbody>
@@ -95,4 +95,8 @@
             text-align: center;
         }
     </style>
+
+    <script>
+
+    </script>
 @endsection

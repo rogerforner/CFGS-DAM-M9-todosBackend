@@ -39,7 +39,7 @@ class TaskController extends Controller
         //VALIDACIONS
         //El camp "name" només podrà contenir un mínim de 5 caràcters i un màxim de 255 caràcters.
         $this->validate($request, [
-            'name' => 'required|min:5|max:255',
+            'name' => 'bail|required|min:5|max:255',
         ]);
 
         //CREAR
