@@ -73,9 +73,9 @@
                         </tr>
                         <!-- Tasques
                         ================================================== -->
-                        @foreach($tasks as $task)
+                        @foreach($tasks as $index => $task)
                             <tr>
-                                <td class="task-id">{{ $task->id }}</td>
+                                <td class="task-id">{{ $index+1 }}</td>
                                 <td title="Created at {{ $task->created_at }}" class="task-name">{{ $task->name }}</td>
                                 <td class="task-action">
                                     <button type="button" title="Edit" class="btn btn-warning">
