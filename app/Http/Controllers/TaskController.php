@@ -15,12 +15,13 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
-        //Obtenir totes les tasques de la DB, sense importar l'usuari que les ha creat.
-        $allTasks = Task::all();
+        //Obtenir totes les tasques de la DB, tenint en compte l'usuari al qual li pertanyen.
+        //Fem una consulta a la base de dades.
+        $userTasks = Task::where('user_id', $request->user()->id)->get();
 
         //On task.index fa referència a la carpeta tasks i fitxer index.blade.php de resources/views/
         return view('tasks.index', [
-            'tasks' => $allTasks
+            'tasks' => $userTasks
         ]);
     }
 
