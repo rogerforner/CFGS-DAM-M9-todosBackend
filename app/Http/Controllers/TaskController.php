@@ -49,15 +49,9 @@ class TaskController extends Controller
         ]);
 
         //RETURN
-        Task::create($request->all());
+        return redirect()->route('tasks.index');
 
-        return response([
-            'error'   => false,
-            'created' => true,
-            'message' => 'Task created!',
-        ], 200);
-
-        //XIVATOS
+        //XIVATO
         //Saber quin usuari està duent a terme la petició.
         //return $request->user();
     }
