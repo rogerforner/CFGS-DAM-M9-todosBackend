@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use function redirect;
 
 class TaskController extends Controller
 {
@@ -35,7 +36,30 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //VALIDACIONS
+        //El camp "name" només podrà contenir un mínim de 5 caràcters i un màxim de 255 caràcters.
+        $this->validate($request, [
+            'name' => 'required|min:5|max:255',
+        ]);
+
+        //CREAR
+        //Tenim en compte les relacions Eloquent entre usuaris i tasques (hasMany).
+        $request->user()->tasks()->create([
+            'name' => $request->name,
+        ]);
+
+        //RETURN
+        Task::create($request->all());
+
+        return response([
+            'error'   => false,
+            'created' => true,
+            'message' => 'Task created!',
+        ], 200);
+
+        //XIVATOS
+        //Saber quin usuari està duent a terme la petició.
+        //return $request->user();
     }
 
     /**

@@ -1,6 +1,5 @@
 <template>
     <div class="container-fluid">
-
         <div class="row">
             <div class="box box-default">
                 <div class="box-header with-border">
@@ -33,7 +32,7 @@
                                 <th class="task-action">Actions</th>
                             </tr>
                             <tr>
-                                <td class="task-id">1</td>
+                                <td class="task-id">100</td>
                                 <td class="task-name">A long time ago in a galaxy far, far away...</td>
                                 <td class="task-action">
                                     <button type="button" title="Edit" class="btn btn-warning">
