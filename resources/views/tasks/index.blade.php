@@ -20,6 +20,7 @@
         @if (count($errors) > 0)
             <div class="row">
                 <div class="alert alert-danger">
+                    <h4><i class="fa fa-warning"></i> Error:</h4>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -43,7 +44,7 @@
                         <div class="input-group">
                             <!-- Input: name
                             ================================================== -->
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" placeholder="Task name" class="form-control">
                             <!-- Botó: submit
                             ================================================== -->
                             <span class="input-group-btn">
