@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\TaskRepository;
 use App\Task;
 use Illuminate\Http\Request;
 use function redirect;
@@ -9,19 +10,33 @@ use function redirect;
 class TaskController extends Controller
 {
     /**
+     * Instància per al repositori TaskRepository.
+     * @var
+     */
+    protected $tasks;
+    /**
+     * Constructor per incorporar el repositori TaskController.
+     * @param TaskRepository $tasks
+     */
+    public function __construct(TaskRepository $tasks)
+    {
+        $this->middleware('auth');
+        $this->tasks = $tasks; //$tasks fa referència al repositori (protected $tasks).
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        //Obtenir totes les tasques de la DB, tenint en compte l'usuari al qual li pertanyen.
-        //Fem una consulta a la base de dades.
-        $userTasks = Task::where('user_id', $request->user()->id)->get();
-
         //On task.index fa referència a la carpeta tasks i fitxer index.blade.php de resources/views/
         return view('tasks.index', [
-            'tasks' => $userTasks
+            //$this->tasks fa referència al repositori: __construct(TaskRepository $tasks).
+            //forUser() és la funció del repositori TaskRepository.php, amb la que fem la consulta a la base de dades.
+            //$request->user() ho emprem per definir l'usuari, doncs, a més a més, la funció en requereix d'un.
+            'tasks' => $this->tasks->forUser($request->user()),
         ]);
     }
 
