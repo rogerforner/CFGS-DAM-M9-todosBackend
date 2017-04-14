@@ -115,12 +115,15 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-        //
+        //Primer escollim la tasca segons la seva id i, desprès, l'esborrem.
+        $task = Task::find($id);
+        $task->delete();
+
+        return redirect()->route('tasks.index');
     }
 }

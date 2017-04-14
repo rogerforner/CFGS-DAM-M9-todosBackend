@@ -90,7 +90,7 @@
                                         <input type="hidden" name="_method" value="DELETE"> --}}
                                         {{ method_field('DELETE') }}
 
-                                        <button type="button" title="Trash" class="btn btn-danger">
+                                        <button type="submit" title="Trash" class="btn btn-danger">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </form>
