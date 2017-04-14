@@ -71,18 +71,33 @@
                             <th class="task-name">Tasks</th>
                             <th class="task-action">Actions</th>
                         </tr>
-                        <!-- Tasques
+                        <!-- Tasca
                         ================================================== -->
                         @foreach($tasks as $index => $task)
                             <tr>
                                 <td class="task-id">{{ $index+1 }}</td>
                                 <td title="Created at {{ $task->created_at }}" class="task-name">{{ $task->name }}</td>
                                 <td class="task-action">
+                                    <!-- Esborrar tasca
+                                    ================================================== -->
+                                    <form action="{{ route('tasks.destroy', [$task->id]) }}" method='POST'>
+                                        {{ csrf_field() }}
+                                        {{-- El formulari és de tipus POST, encara que aquest està responent a una
+                                        sol·licitud de tipus emprant una ruta. Els formularis d'HTML només admeten
+                                        les peticions POST i GET, per la qual cosa hem de fer servir el mètode
+                                        method_field('DELETE') per tal de poder colar una peticío Delete. Aquest
+                                        mètode generarà un camp ocult que sobreescriurà el cerdader:
+                                        <input type="hidden" name="_method" value="DELETE"> --}}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="button" title="Trash" class="btn btn-danger">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </form>
+                                    <!-- Editar tasca
+                                    ================================================== -->
                                     <button type="button" title="Edit" class="btn btn-warning">
                                         <i class="fa fa-pencil"></i>
-                                    </button>
-                                    <button type="button" title="Trash" class="btn btn-danger">
-                                        <i class="fa fa-trash-o"></i>
                                     </button>
                                 </td>
                             </tr>
