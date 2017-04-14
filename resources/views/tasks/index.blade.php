@@ -78,9 +78,14 @@
                                 <td class="task-id">{{ $index+1 }}</td>
                                 <td title="Created at {{ $task->created_at }}" class="task-name">{{ $task->name }}</td>
                                 <td class="task-action">
+                                    <!-- Editar tasca
+                                    ================================================== -->
+                                    <button type="button" title="Edit" class="btn btn-warning">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
                                     <!-- Esborrar tasca
                                     ================================================== -->
-                                    <form action="{{ route('tasks.destroy', [$task->id]) }}" method='POST'>
+                                    <form action="{{ route('tasks.destroy', [$task->id]) }}" method='POST' style="display: inline;">
                                         {{ csrf_field() }}
                                         {{-- El formulari és de tipus POST, encara que aquest està responent a una
                                         sol·licitud de tipus emprant una ruta. Els formularis d'HTML només admeten
@@ -90,15 +95,10 @@
                                         <input type="hidden" name="_method" value="DELETE"> --}}
                                         {{ method_field('DELETE') }}
 
-                                        <button type="submit" title="Trash" class="btn btn-danger">
+                                        <button type="submit" title="Delete" class="btn btn-danger">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </form>
-                                    <!-- Editar tasca
-                                    ================================================== -->
-                                    <button type="button" title="Edit" class="btn btn-warning">
-                                        <i class="fa fa-pencil"></i>
-                                    </button>
                                 </td>
                             </tr>
                         @endforeach
