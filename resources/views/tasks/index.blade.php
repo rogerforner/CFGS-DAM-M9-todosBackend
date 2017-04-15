@@ -17,7 +17,8 @@
         <!-- Accions exitoses
              ================================================== -->
         @if (Session::has('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="fa fa-check-circle"></i> Success:</h4>
                 <li>{{ Session::get('success') }}</li>
             </div>
@@ -28,7 +29,8 @@
              ================================================== -->
         @if (count($errors) > 0)
             <div class="row">
-                <div class="alert alert-danger">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="fa fa-warning"></i> Error:</h4>
                     <ul>
                         @foreach ($errors->all() as $error)
