@@ -6,6 +6,7 @@ use App\Repositories\TaskRepository;
 use App\Task;
 use Illuminate\Http\Request;
 use function redirect;
+use Session;
 use function view;
 
 class TaskController extends Controller
@@ -73,6 +74,9 @@ class TaskController extends Controller
             'name' => $request->name,
         ]);
 
+        //MISSATGE
+        Session::flash('success', 'New task has been succesfully added!');
+
         //RETURN
         return redirect()->route('tasks.index');
     }
@@ -125,6 +129,9 @@ class TaskController extends Controller
             'name' => 'bail|required|min:5|max:255',
         ]);
 
+        //MISSATGE
+        Session::flash('success', 'Task &laquo;' . $task->name . '&raquo; has been successfully updated.');
+
         //ACTUALITZAR
         //Actualment només toquem el 'name', però és interessant emprar all() ja que ens pot evitar l'oblid d'algún
         //camp, en el cas que n'emprem molts.
@@ -146,6 +153,9 @@ class TaskController extends Controller
 
         //ESBORRAR
         $task->delete();
+
+        //MISSATGE
+        Session::flash('success', 'Task &laquo;' . $task->name . '&raquo; has been successfully deleted.');
 
         return redirect()->route('tasks.index');
     }

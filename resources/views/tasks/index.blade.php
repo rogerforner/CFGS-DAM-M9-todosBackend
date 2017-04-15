@@ -14,6 +14,15 @@
 
 @section('main-content')
     <div class="container-fluid">
+        <!-- Accions exitoses
+             ================================================== -->
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <h4><i class="fa fa-check-circle"></i> Success:</h4>
+                <li>{{ Session::get('success') }}</li>
+            </div>
+        @endif
+
         <!-- Tractament d'errors
              https://laravel.com/docs/5.4/validation#form-request-validation
              ================================================== -->
