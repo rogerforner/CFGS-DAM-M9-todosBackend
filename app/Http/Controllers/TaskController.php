@@ -12,11 +12,13 @@ class TaskController extends Controller
 {
     /**
      * Instància per al repositori TaskRepository.
-     * @var
+     *
+     * @var TaskRepository
      */
     protected $tasks;
     /**
-     * Constructor per incorporar el repositori TaskController.
+     * Constructor de TaskController.
+     *
      * @param TaskRepository $tasks
      */
     public function __construct(TaskRepository $tasks)
@@ -28,7 +30,8 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -44,7 +47,6 @@ class TaskController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -54,8 +56,8 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -82,10 +84,9 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Task $task
      */
-    public function show($id)
+    public function show(Task $task)
     {
         //
     }
@@ -96,31 +97,25 @@ class TaskController extends Controller
      * Quan l'usuari fa una petició a aquest mètode, ens interessa que aquest sigui redirigit a la vista
      * corresponent a l'edició de tasques /tasks/edit.blade.php
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Task $task
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(Task $task)
     {
-        //Obtenim la id de la tasca.
-        $task = Task::find($id);
-
-        //Un cop obtinguda la id de la tasca, enviem aquesta, sota la variable $taskToEdit', a la vista desitjada.
-        //Si no enviem la variable no podrem treballar amb la tasca.
-        return view('tasks.edit')->with('taskToEdit', $task);
+        return view('tasks.edit', [
+            'taskToEdit' => $task //variable que portem a la vista, per poder treballar amb la info de la tasca.
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Task $task
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $task)
     {
-        //Obtenim la id de la tasca.
-        $task = Task::find($id);
-
         //VALIDACIONS
         //El camp "name" només podrà contenir un mínim de 5 caràcters i un màxim de 255 caràcters.
         $this->validate($request, [
@@ -128,9 +123,9 @@ class TaskController extends Controller
         ]);
 
         //ACTUALITZAR
-        $task->update([
-            'name' => $request->name,
-        ]);
+        //Actualment només toquem el 'name', però és interessant emprar all() ja que ens pot evitar l'oblid d'algún
+        //camp, en el cas que n'emprem molts.
+        $task->update($request->all());
 
         return redirect()->route('tasks.index');
     }
@@ -138,13 +133,13 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Task $task
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Task $task)
     {
         //Primer obtenim la id de la tasca i, desprès, l'esborrem.
-        $task = Task::find($id);
+        //$task = Task::find($id);
         $task->delete();
 
         return redirect()->route('tasks.index');
