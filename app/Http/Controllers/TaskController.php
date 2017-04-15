@@ -6,6 +6,7 @@ use App\Repositories\TaskRepository;
 use App\Task;
 use Illuminate\Http\Request;
 use function redirect;
+use function view;
 
 class TaskController extends Controller
 {
@@ -92,12 +93,20 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * Quan l'usuari fa una petició a aquest mètode, ens interessa que aquest sigui redirigit a la vista
+     * corresponent a l'edició de tasques /tasks/edit.blade.php
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        //Obtenim la id de la tasca.
+        $task = Task::find($id);
+
+        //Un cop obtinguda la id de la tasca, enviem aquesta, sota la variable $taskToEdit', a la vista desitjada.
+        //Si no enviem la variable no podrem treballar amb la tasca.
+        return view('tasks.edit')->with('taskToEdit', $task);
     }
 
     /**
@@ -109,7 +118,22 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Obtenim la id de la tasca.
+        $task = Task::find($id);
+
+        //VALIDACIONS
+        //El camp "name" només podrà contenir un mínim de 5 caràcters i un màxim de 255 caràcters.
+        $this->validate($request, [
+            'name' => 'bail|required|min:5|max:255',
+        ]);
+
+        //ACTUALITZAR
         //
+        $task->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('tasks.index');
     }
 
     /**
@@ -120,7 +144,7 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //Primer escollim la tasca segons la seva id i, desprès, l'esborrem.
+        //Primer obtenim la id de la tasca i, desprès, l'esborrem.
         $task = Task::find($id);
         $task->delete();
 
