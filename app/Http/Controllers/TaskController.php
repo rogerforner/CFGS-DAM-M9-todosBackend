@@ -128,7 +128,6 @@ class TaskController extends Controller
         ]);
 
         //ACTUALITZAR
-        //
         $task->update([
             'name' => $request->name,
         ]);
