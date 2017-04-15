@@ -102,6 +102,10 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
+        //POLÍTICA SEGURETAT
+        $this->authorize('ownerTask', $task);
+
+        //VISTA: Edició
         return view('tasks.edit', [
             'taskToEdit' => $task //variable que portem a la vista, per poder treballar amb la info de la tasca.
         ]);
@@ -116,6 +120,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
+        //POLÍTICA SEGURETAT
+        $this->authorize('ownerTask', $task);
+
         //VALIDACIONS
         //El camp "name" només podrà contenir un mínim de 5 caràcters i un màxim de 255 caràcters.
         $this->validate($request, [
@@ -138,6 +145,10 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        //POLÍTICA SEGURETAT
+        $this->authorize('ownerTask', $task);
+
+        //ESBORRAR
         //Primer obtenim la id de la tasca i, desprès, l'esborrem.
         //$task = Task::find($id);
         $task->delete();
