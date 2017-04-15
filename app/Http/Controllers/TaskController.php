@@ -75,10 +75,6 @@ class TaskController extends Controller
 
         //RETURN
         return redirect()->route('tasks.index');
-
-        //XIVATO
-        //Saber quin usuari està duent a terme la petició.
-        //return $request->user();
     }
 
     /**
@@ -149,8 +145,6 @@ class TaskController extends Controller
         $this->authorize('ownerTask', $task);
 
         //ESBORRAR
-        //Primer obtenim la id de la tasca i, desprès, l'esborrem.
-        //$task = Task::find($id);
         $task->delete();
 
         return redirect()->route('tasks.index');

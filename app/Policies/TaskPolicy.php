@@ -11,16 +11,6 @@ class TaskPolicy
     use HandlesAuthorization;
 
     /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Determinar si un usuari donat és propietari d'una determinada tasca.
      *
      * @param User $user
