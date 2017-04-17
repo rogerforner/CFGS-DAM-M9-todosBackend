@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        //Amb aquest esdevinemnt ens interessa escoltar si un usuari s'ha creat i, si és així, enviar-li un correu.
+        'App\Events\NewUser' => [
+            'App\Listeners\SendWelcomeEmail',
+        ],
     ];
 
     /**
