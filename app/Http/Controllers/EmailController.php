@@ -6,6 +6,7 @@ use App\Mail\NewUserWelcome;
 use Auth;
 use Illuminate\Http\Request;
 use Mail;
+use Session;
 use function view;
 
 class EmailController extends Controller
@@ -47,6 +48,8 @@ class EmailController extends Controller
         //Sabem que serà emprada la vista esmentada perquè si ens dirigim al fitxer /Http/Mail/NewUserWelcome.php veurem
         //que el mètode build ho defineix així.
         Mail::to(Auth::user()->email)->send(new NewUserWelcome());
+
+        Session::flash('success', 'The email has been successfully sent.');
 
         return redirect()->route('emails.index');
     }
