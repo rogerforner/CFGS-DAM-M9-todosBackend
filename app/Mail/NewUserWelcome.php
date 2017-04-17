@@ -12,9 +12,8 @@ class NewUserWelcome extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Create a new message instance.
+     * NewUserWelcome constructor.
      *
-     * @return void
      */
     public function __construct()
     {

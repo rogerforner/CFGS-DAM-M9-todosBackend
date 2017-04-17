@@ -17,9 +17,9 @@ class NewUser
     public $user;
 
     /**
-     * Create a new event instance.
+     * NewUser constructor.
      *
-     * @return void
+     * @param User $user
      */
     public function __construct(User $user)
     {
