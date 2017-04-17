@@ -2,11 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewUserWelcome;
+use Auth;
 use Illuminate\Http\Request;
+use Mail;
 use function view;
 
 class EmailController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * EmailController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,21 +31,24 @@ class EmailController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function email()
-    {
-        return view('emails.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
+     * "Show the form for creating a new resource."
      *
-     * @return \Illuminate\Http\Response
+     * Enviar un email.
+     * Es tracta d'enviar un email a l'usuari que faci clic al botó enviar en la vista /emails/index.blade
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
-        //
+        //Funció Mail (pbjecte).
+        //to() a qui anirà dirigit l'email. Ens interessa el correu de l'usuari autenticat Auth::user()->email.
+        //Amb send(new NewUserWelcome()) estem dient el què enviem amb el mail. En el nostre cas és un objecte nou, que
+        //contindrà el contingut de la vista /emails/user/newuserwelcome.blade.php
+        //Sabem que serà emprada la vista esmentada perquè si ens dirigim al fitxer /Http/Mail/NewUserWelcome.php veurem
+        //que el mètode build ho defineix així.
+        Mail::to(Auth::user()->email)->send(new NewUserWelcome());
+
+        return redirect()->route('tasks.index');
     }
 
     /**

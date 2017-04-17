@@ -20,7 +20,9 @@
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="fa fa-check-circle"></i> Success:</h4>
-                <li>{{ Session::get('success') }}</li>
+                <ul>
+                    <li>{{ Session::get('success') }}</li>
+                </ul>
             </div>
         @endif
 
@@ -49,7 +51,7 @@
                 <div class="box-body">
                     <!-- Formulari: crear tasques
                     ================================================== -->
-                    <form action="{{ route('tasks.store') }}" method='POST'>
+                    <form action="{{ route('tasks.store') }}">
                         {{-- srf_field() = <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
                         {{ csrf_field() }}
 

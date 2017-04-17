@@ -23,15 +23,9 @@
                     <!-- Info
                     ================================================== -->
                     <p><em>Send an email for your user email account.</em></p>
-                    <!-- Formulari: enviar email
+                    <!-- Botó: enviar email
                     ================================================== -->
-                    <form action="#" method='POST'>
-                        <div class="input-group" style="width: 100%">
-                            <!-- Botó: submit
-                            ================================================== -->
-                            <button type="submit" class="btn btn-info btn-block btn-flat"><strong>Send</strong></button>
-                        </div>
-                    </form>
+                    <a href="{{ route('emails.create') }}" class="btn btn-info btn-block btn-flat"><strong>Send</strong></a>
                 </div><!-- .box-body -->
             </div><!-- .box -->
         </div><!-- .row -->
