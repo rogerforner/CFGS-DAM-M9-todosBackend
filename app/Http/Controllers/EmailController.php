@@ -48,7 +48,7 @@ class EmailController extends Controller
         //que el mètode build ho defineix així.
         Mail::to(Auth::user()->email)->send(new NewUserWelcome());
 
-        return redirect()->route('tasks.index');
+        return redirect()->route('emails.index');
     }
 
     /**
