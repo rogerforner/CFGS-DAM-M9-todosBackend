@@ -20,11 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     /**
      * Ruta per fer referència al controlador TaskController.
+     *
      * Podríem afegir totes les rutes que empraríem per treballar amb la creació, edició, eliminació de les
      * tasques. Però és més net crear un controlador específic per a aquestes, doncs en aquest fitxer
      * és provable es vagi incrementant el número de controladors a emprar, no només per a tasques.
      */
-    Route::resource('task', 'TaskController');
+    Route::resource('tasks', 'TaskController');
+
+    /**
+     * Ruta per referenciar el EmailController
+     */
+    Route::resource('emails', 'EmailController');
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes

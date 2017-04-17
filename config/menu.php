@@ -34,6 +34,7 @@ Menu::macro('sidebar', function () {
         ->add(Menu::adminlteSeparator('ACTIVITIES'))
         #adminlte_menu
         ->add(Link::toUrl('/tasks', '<i class="fa fa-tasks"></i><span>Tasks</span>'))
+        ->add(Link::toUrl('/emails', '<i class="fa fa-envelope-o"></i><span>Email</span>'))
 
         ->add(Menu::adminlteSeparator('EXTERNAL LINKS'))
         ->add(Menu::new()->prepend('<a href="#"><i class="fa fa-wikipedia-w"></i><span>Acacha</span> <i class="fa fa-angle-left pull-right"></i></a>')

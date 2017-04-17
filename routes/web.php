@@ -30,6 +30,12 @@ Route::group(['middleware' => 'auth'], function () {
      */
     Route::resource('/tasks', 'TaskController');
 
+    /**
+     * Ruta de la vista emails
+     * Http/Controllers/EmailController -> index()
+     */
+    Route::resource('/emails', 'EmailController');
+
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 });
