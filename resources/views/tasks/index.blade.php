@@ -51,7 +51,7 @@
                 <div class="box-body">
                     <!-- Formulari: crear tasques
                     ================================================== -->
-                    <form action="{{ route('tasks.store') }}">
+                    <form action="{{ route('tasks.store') }}" method="POST">
                         {{-- srf_field() = <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
                         {{ csrf_field() }}
 
