@@ -72,7 +72,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
-                        <h1>todosBackend{{-- <small>and others</small> --}}</h1>
+                        <h1>todosBackend <small>and others</small></h1>
                         <h2><b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h2>
                         <h3>A <a href="https://laravel.com/">Laravel</a> {{ trans('adminlte_lang::message.laravelpackage') }}
                             scaffolding/boilerplate {{ trans('adminlte_lang::message.to') }} <a href="https://almsaeedstudio.com/preview">AdminLTE</a> {{ trans('adminlte_lang::message.templatewith') }}

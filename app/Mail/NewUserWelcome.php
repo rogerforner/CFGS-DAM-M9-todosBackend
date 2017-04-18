@@ -11,17 +11,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class NewUserWelcome extends Mailable
 {
     use Queueable, SerializesModels;
-    public $user;
-
-    /**
-     * NewUser constructor.
-     *
-     * @param User $user
-     */
-    public function __construct(User $user)
-    {
-        $this->user = $user;
-    }
 
     /**
      * Build the message.
