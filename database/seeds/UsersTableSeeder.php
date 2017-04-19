@@ -6,11 +6,12 @@ class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * /database/factories/ModelFactory.php
      *
      * @return void
      */
     public function run()
     {
-        //
+        factory(App\User::class, 10)->create();
     }
 }
