@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Policies\TaskPolicy;
 use App\Task;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //Necessàri per a registrar les rutes Passport.
+        Passport::routes();
     }
 }
