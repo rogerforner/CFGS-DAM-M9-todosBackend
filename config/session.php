@@ -176,4 +176,18 @@ return [
 
     'http_only' => true,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Driver Passport
+    |--------------------------------------------------------------------------
+    |
+    | Emprarem el driver passport per a les sessions de la nostra API.
+    |
+    */
+
+    'api' => [
+        'driver' => 'passport',
+        'provider' => 'users',
+    ],
+
 ];
