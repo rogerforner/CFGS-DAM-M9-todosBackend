@@ -18,7 +18,7 @@ class PermissionsRolesSeeder extends Seeder
          * Creem els permisos.
          */
         //Tasks
-        Permission::create(['name' => 'show-tassk']);
+        Permission::create(['name' => 'show-task']);
         Permission::create(['name' => 'view-task']);
         Permission::create(['name' => 'create-task']);
         Permission::create(['name' => 'update-task']);
@@ -36,7 +36,7 @@ class PermissionsRolesSeeder extends Seeder
          */
         $role = Role::create(['name' => 'admin']);
 
-        $role->givePermissionTo('show-tassk');   //task
+        $role->givePermissionTo('show-task');   //task
         $role->givePermissionTo('view-task');
         $role->givePermissionTo('create-task');
         $role->givePermissionTo('update-task');
