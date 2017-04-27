@@ -36,6 +36,12 @@ Route::group(['middleware' => 'auth'], function () {
      */
     Route::resource('/emails', 'EmailController');
 
+    /**
+     * Rutes del controlador ChatController.
+     * Http/Controllers/ChatController
+     */
+    Route::resource('/chat', 'ChatController');
+
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
