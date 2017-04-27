@@ -14,11 +14,10 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-
-/**
- * Instanciem el component Tasks.vue
- */
+//Tasks
 Vue.component('tasks', require('./components/Tasks.vue'));
+//Chat
+Vue.component('chat-message', require('./components/chat/ChatMessage.vue'));
 
 const app = new Vue({
     el: '#app'
