@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Chat.</p>
+        <p>Missatges individuals.</p>
     </div>
 </template>
 <style>

@@ -15,9 +15,9 @@
                     </div>
                     <div class="box-body">
 
-                        <div id="app">
                             <chat-message></chat-message>
-                        </div>
+                            <chat-log></chat-log>
+                            <chat-form></chat-form>
 
                     </div><!-- .box-body -->
                 </div><!-- .box -->

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Chat.</p>
+        <p>Formulari per escriure missatges.</p>
     </div>
 </template>
 <style>

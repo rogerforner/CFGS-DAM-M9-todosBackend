@@ -18,6 +18,8 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('tasks', require('./components/Tasks.vue'));
 //Chat
 Vue.component('chat-message', require('./components/chat/ChatMessage.vue'));
+Vue.component('chat-log', require('./components/chat/ChatLog.vue'));
+Vue.component('chat-form', require('./components/chat/ChatForm.vue'));
 
 const app = new Vue({
     el: '#app'
