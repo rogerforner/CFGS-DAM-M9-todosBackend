@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace RogerForner\TodosBackend\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use RogerForner\TodosBackend\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 
@@ -20,13 +20,6 @@ class ResetPasswordController extends Controller
     */
 
     use ResetsPasswords;
-
-    /**
-     * Where to redirect users after resetting their password.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
 
     /**
      * Display the password reset view for the given token.

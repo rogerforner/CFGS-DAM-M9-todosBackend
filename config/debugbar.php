@@ -31,7 +31,7 @@ return [
         'driver'     => 'file', // redis, file, pdo, custom
         'path'       => storage_path('debugbar'), // For file driver
         'connection' => null,   // Leave null for default connection (Redis/PDO)
-        'provider'   => '' // Instance of StorageInterface for custom driver
+        'provider'   => '', // Instance of StorageInterface for custom driver
     ],
 
     /*
@@ -122,23 +122,23 @@ return [
             'with_params'       => true,   // Render SQL with the parameters substituted
             'timeline'          => false,  // Add the queries to the timeline
             'backtrace'         => false,  // EXPERIMENTAL: Use a backtrace to find the origin of the query in your files.
-            'explain' => [                 // EXPERIMENTAL: Show EXPLAIN output on queries
+            'explain'           => [                 // EXPERIMENTAL: Show EXPLAIN output on queries
                 'enabled' => false,
-                'types' => ['SELECT'],     // ['SELECT', 'INSERT', 'UPDATE', 'DELETE']; for MySQL 5.6.3+
+                'types'   => ['SELECT'],     // ['SELECT', 'INSERT', 'UPDATE', 'DELETE']; for MySQL 5.6.3+
             ],
             'hints'             => true,    // Show hints for common mistakes
         ],
         'mail' => [
-            'full_log' => false
+            'full_log' => false,
         ],
         'views' => [
             'data' => false,    //Note: Can slow down the application, because the data can be quite large..
         ],
         'route' => [
-            'label' => true  // show complete route on bar
+            'label' => true,  // show complete route on bar
         ],
         'logs' => [
-            'file' => null
+            'file' => null,
         ],
     ],
 
@@ -147,7 +147,7 @@ return [
      | Inject Debugbar in Response
      |--------------------------------------------------------------------------
      |
-     | Usually, the debugbar is added just before </body>, by listening to the
+     | Usually, the debugbar is added just before <body>, by listening to the
      | Response after the App is done. If you disable this, you have to add them
      | in your template yourself. See http://phpdebugbar.com/docs/rendering.html
      |

@@ -1,21 +1,30 @@
 <?php
 
-namespace Tests;
-
-use App;
-use Artisan;
-use Config;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\Hash;
 
 /**
  * Class AcachaAdminLTELaravelTest.
  */
-class AcachaAdminLTELaravelTest extends BrowserKitTest
+class AcachaAdminLTELaravelTest extends TestCase
 {
     use DatabaseMigrations;
+
+    /*
+     * Overwrite createApplication to add Http Kernel
+     * see: https://github.com/laravel/laravel/pull/3943
+     *      https://github.com/laravel/framework/issues/15426
+     */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        return $app;
+    }
 
     /**
      * Set up tests.
@@ -24,14 +33,6 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
     {
         parent::setUp();
         App::setLocale('en');
-    }
-
-    /**
-     * Set up before class.
-     */
-    public static function setUpBeforeClass()
-    {
-        passthru('composer dumpautoload');
     }
 
     /**
@@ -79,17 +80,12 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
      * Test Login.
      *
      * @return void
-     *
      */
     public function testLogin()
     {
-        Config::set('auth.providers.users.field', 'email');
         $user = factory(App\User::class)->create(['password' => Hash::make('passw0RD')]);
 
-        view()->share('user', $user);
-
-        $this->withSession(['user' => $user])
-            ->visit('/login')
+        $this->visit('/login')
             ->type($user->email, 'email')
             ->type('passw0RD', 'password')
             ->press('Sign In')
@@ -102,9 +98,8 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
      *
      * @return void
      */
-    public function testLoginRequiredFieldsWithEmailLogin()
+    public function testLoginRequiredFields()
     {
-        Config::set('auth.providers.users.field', 'email');
         $this->visit('/login')
             ->type('', 'email')
             ->type('', 'password')
@@ -142,8 +137,6 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
      */
     public function testHomePageForUnauthenticatedUsers()
     {
-        $user = factory(App\User::class)->create();
-        view()->share('user', $user);
         $this->visit('/home')
             ->seePageIs('/login');
     }
@@ -156,7 +149,7 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
     public function testHomePageForAuthenticatedUsers()
     {
         $user = factory(App\User::class)->create();
-        view()->share('user', $user);
+
         $this->actingAs($user)
             ->visit('/home')
             ->see($user->name);
@@ -170,7 +163,7 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
     public function testLogout()
     {
         $user = factory(App\User::class)->create();
-        view()->share('user', $user);
+
         $form = $this->actingAs($user)->visit('/home')->getForm('logout');
 
         $this->actingAs($user)
@@ -198,9 +191,6 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
      */
     public function testNewUserRegistration()
     {
-        Config::set('auth.providers.users.field', 'email');
-        $user = factory(App\User::class)->create();
-        view()->share('user', $user);
         $this->visit('/register')
             ->type('Sergi Tur Badenas', 'name')
             ->type('sergiturbadenas@gmail.com', 'email')
@@ -253,63 +243,5 @@ class AcachaAdminLTELaravelTest extends BrowserKitTest
             ->type('notexistingemail@gmail.com', 'email')
             ->press('Send Password Reset Link')
             ->see('There were some problems with your input');
-    }
-
-    /**
-     * Test make:view command
-     *
-     */
-    public function testMakeViewCommand()
-    {
-        $view = 'ehqwiqweiohqweihoqweiohqweiojhqwejioqwejjqwe';
-        $viewPath= 'views/' . $view . '.blade.php';
-        try {
-            unlink(resource_path($view));
-        } catch (\Exception $e) {
-        }
-        $this->callArtisanMakeView($view);
-        $resultAsText = Artisan::output();
-        $expectedOutput = 'File ' . resource_path($viewPath) . ' created';
-        $this->assertEquals($expectedOutput, trim($resultAsText));
-        $this->assertFileExists(resource_path($viewPath));
-        $this->callArtisanMakeView($view);
-        $resultAsText = Artisan::output();
-        $this->assertEquals('File already exists', trim($resultAsText));
-        unlink(resource_path($viewPath));
-    }
-
-    /**
-     * Create view using make:view command.
-     *
-     * @param $view
-     */
-    protected function callArtisanMakeView($view)
-    {
-        Artisan::call('make:view', [
-            'name' => $view,
-        ]);
-    }
-    /**
-     * Test adminlte:admin command
-     *
-     */
-    public function testAdminlteAdminCommand()
-    {
-        $seed = database_path('seeds/AdminUserSeeder.php');
-        try {
-            unlink($seed);
-        } catch (\Exception $e) {
-        }
-        $this->callAdminlteAdminCommand();
-        $this->assertFileExists($seed);
-    }
-
-
-    /**
-     * Call adminlte:admin command.
-     */
-    protected function callAdminlteAdminCommand()
-    {
-        Artisan::call('adminlte:admin');
     }
 }

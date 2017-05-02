@@ -1,26 +1,23 @@
 <?php
 
-namespace App\Policies;
+namespace RogerForner\TodosBackend\Policies;
 
-use App\Task;
-use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TaskPolicy
+/**
+ * Class TaskPolicy.
+ *
+ * @package RogerForner\TodosBackend\Policies
+ */
+class TaskPolicy extends BasePolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization,HasAdmin;
 
     /**
-     * Determinar si un usuari donat és propietari d'una determinada tasca.
-     *
-     * @param User $user
-     * @param Task $task
-     * @return bool
+     * @return string
      */
-    public function ownerTask(User $user, Task $task)
+    protected function model()
     {
-        //En interessa saber si l'usuari en concret ($user->id) és propietari d'una tasca en concret, tot gràcies a la
-        //relació entre usuari i tasca de la base de dades ($task->user_id).
-        return $user->id === $task->user_id;
+        return 'task';
     }
 }

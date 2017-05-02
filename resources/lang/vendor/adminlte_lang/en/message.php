@@ -124,7 +124,6 @@ return [
     'yourtext'                => 'Your Text',
     'submit'                  => 'SUBMIT',
     'email'                   => 'Email',
-    'username'                => 'Username',
     'password'                => 'Password',
     'retrypepassword'         => 'Retype password',
     'fullname'                => 'Full Name',

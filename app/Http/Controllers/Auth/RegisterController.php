@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace RogerForner\TodosBackend\Http\Controllers\Auth;
 
-use App\User;
+use RogerForner\TodosBackend\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use RogerForner\TodosBackend\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 /**
@@ -62,11 +62,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'username' => 'sometimes|required|max:255|unique:users',
-            'email'    => 'required|email|max:255|unique:users',
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'terms'    => 'required',
+            'terms' => 'required',
         ]);
     }
 
@@ -78,14 +77,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $fields = [
-            'name'     => $data['name'],
-            'email'    => $data['email'],
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
             'password' => bcrypt($data['password']),
-        ];
-        if (config('auth.providers.users.field','email') === 'username' && isset($data['username'])) {
-            $fields['username'] = $data['username'];
-        }
-        return User::create($fields);
+            'api_token'=> str_random(60),
+        ]);
     }
 }

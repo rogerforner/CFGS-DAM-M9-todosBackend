@@ -122,7 +122,6 @@ return [
     'yourtext'                => 'Su Texto',
     'submit'                  => 'ENVIAR',
     'email'                   => 'Correo Electrónico',
-    'username'                => 'Nombre de usuario',
     'password'                => 'Contraseña',
     'retrypepassword'         => 'Vuelva a escribir la contraseña',
     'fullname'                => 'Nombre completo',

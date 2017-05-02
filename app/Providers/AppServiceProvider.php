@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace RogerForner\TodosBackend\Providers;
 
+use RogerForner\TodosBackend\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+//        User::created(function ($user) {
+//            $user->assignRole('admin');
+//        });
     }
 
     /**

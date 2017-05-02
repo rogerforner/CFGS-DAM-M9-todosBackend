@@ -1,24 +1,44 @@
 <?php
 
-namespace App\Repositories;
+namespace RogerForner\TodosBackend\Repositories;
 
-use App\Task;
-use App\User;
+use \RogerForner\TodosBackend\Repositories\Contracts\Repository;
+use RogerForner\TodosBackend\Task;
 
-class TaskRepository
+class TaskRepository implements Repository
 {
+
     /**
-     * Obtenir la llista de totes les tasques d'un usuari en concret.
+     * @param int   $id
+     * @param array $columns
      *
-     * @param User $user
      * @return mixed
      */
-    public function forUser(User $user)
+    public function find($id, $columns = array('*'))
     {
-        //Consulta a la base de dades.
-        return Task::where('user_id', $user->id)
-            ->orderBy('created_at', 'asc') //Ordenar la llista de forma ascendent, segons la data de creació.
-            //->get(); //Obtenir tota la informació de la db.
-            ->paginate(6); //Número de tasques a mostrar per pàgina. Fa la funció del get, pero amb paginació.
+        return Task::findOrFail($id);
+    }
+
+    public function findOrFail($id, $columns = ['*'])
+    {
+        return Task::findOrFail($id);
+    }
+    public function paginate($perPage = 15, $columns = array('*'))
+    {
+        return Task::paginate($perPage);
+    }
+    public function create(array $data)
+    {
+        Task::create($data);
+    }
+    public function update(array $data, $id)
+    {
+        $task = $this->findOrFail($id);
+        $task->update($data);
+    }
+    public function delete($id)
+    {
+        $task = $this->findOrFail($id);
+        $task->delete();
     }
 }

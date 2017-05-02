@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace RogerForner\TodosBackend\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,9 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        //Amb aquest esdevinemnt ens interessa escoltar si un usuari s'ha creat i, si és així, enviar-li un correu.
-        'App\Events\NewUser' => [
-            'App\Listeners\SendWelcomeEmail',
+        'Illuminate\Auth\Events\Registered' => [
+            'RogerForner\TodosBackend\Listeners\UserRegistered',
         ],
     ];
 

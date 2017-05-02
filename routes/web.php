@@ -1,44 +1,34 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-/**
- * Ruta de la vista welcome
- * resources/views/welcome.blade
- */
+use RogerForner\TodosBackend\Task;
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'can:show,RogerForner\TodosBackend\Task'], function () {
+        Route::get('/tasks', function () {
+            return view('tasks');
+        });
+    });
+
+    Route::get('/profile/tokens', function () {
+        return view('tokens');
+    });
+
+    Route::get('users', function () {
+        dd(RogerForner\TodosBackend\User::paginate());
+    });
+
+    #adminlte_routes
+    Route::get('messages', 'MessagesController@index')->name('messages');
+    Route::post('messages', 'MessagesController@sendMessage');
+    Route::get('user/messages', 'MessagesController@fetchMessages');
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-/**
- * Les següents rutes estàn protegides. És a dir, si no estàs logat i hi intentes accedir
- * et redirigeixen a la pàgina de login.
- */
-Route::group(['middleware' => 'auth'], function () {
-    /**
-     * Ruta del controlador TaskController.
-     * Http/Controllers/TaskController
-     */
-    Route::resource('/tasks', 'TaskController');
-
-    /**
-     * Rutes del controlador EmailController.
-     * Http/Controllers/EmailController
-     */
-    Route::resource('/emails', 'EmailController');
-
-    /**
-     * Rutes del controlador ChatController.
-     * Http/Controllers/ChatController
-     */
-    Route::resource('/chat', 'ChatController');
+Route::get('/phpinfo', function () {
+    phpinfo();
 });

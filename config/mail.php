@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@rogerforner.com',
-        'name'    => 'Roger Forner Fabre',
+        'address' => 'info@todosbackendrogerforner.com',
+        'name'    => 'Todos Backend de RogerForner',
     ],
 
     /*
@@ -111,23 +111,5 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Markdown compatible
-    |--------------------------------------------------------------------------
-    |
-    | Els nostres missatges tenen compatibilitat amb markdown.
-    | També afegim el path dels emails predefinits.
-    |
-    */
-
-    'markdown' => [
-        'theme' => 'default',
-
-        'paths' => [
-            resource_path('views/vendor/mail'),
-        ],
-    ],
 
 ];

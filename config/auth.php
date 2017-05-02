@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard'     => 'web',
         'passwords' => 'users',
     ],
 
@@ -37,12 +37,17 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver'   => 'session',
             'provider' => 'users',
         ],
 
         'api' => [
-            'driver' => 'passport',
+            'driver'   => 'passport',
+            'provider' => 'users',
+        ],
+
+        'api_token' => [
+            'driver'   => 'token',
             'provider' => 'users',
         ],
     ],
@@ -67,7 +72,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model'  => RogerForner\TodosBackend\User::class,
         ],
 
         // 'users' => [
@@ -94,8 +99,8 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
+            'table'    => 'password_resets',
+            'expire'   => 60,
         ],
     ],
 
