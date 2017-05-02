@@ -40,18 +40,18 @@
             </div>
         </td>
         <td align="center">
-            <div class="progress progress-xs">
-                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+            <div class="progress progress-sm active" title="65%">
+                <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 65%"></div>
             </div>
         </td>
-        <td align="center"><span class="badge bg-red">55%</span></td>
+        <td align="center"><span class="label label-warning">65%</span></td>
         <td align="center">
             <div class="btn-group">
-                <button type="button" class="btn btn-info btn-flat" @click="editTodo(page,todo.id)">
-                    <i class="fa fa-edit"></i>
+                <button type="button" class="btn btn-primary btn-flat" title="Edit" @click="editTodo(page,todo.id)">
+                    <i class="fa fa-pencil"></i>
                 </button>
 
-                <button type="button" class="btn btn-danger btn-flat" @click="deleteTodo(todo.id)">
+                <button type="button" class="btn btn-danger btn-flat" title="Delete" @click="deleteTodo(todo.id)">
                     <i class="fa fa-trash"></i>
                 </button>
             </div>

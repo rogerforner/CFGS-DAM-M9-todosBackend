@@ -8,7 +8,7 @@
 @section('main-content')
     <div class="container-fluid spark-screen">
         <div class="row">
-            <div class="col-md-9 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
 
                 <div class="box box-primary direct-chat direct-chat-primary">
                     <div class="box-header with-border">
@@ -54,7 +54,9 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
+
                         <chat-form :user=" {{ Auth::user() }}" v-on:messagesent="addMessage"></chat-form>
+
                     </div>
                     <!-- /.box-footer-->
                 </div>

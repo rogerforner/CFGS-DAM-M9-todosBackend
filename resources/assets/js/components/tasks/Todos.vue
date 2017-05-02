@@ -3,85 +3,94 @@
 </style>
 <template>
     <div>
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Add task</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add task</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form" action="#">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <!--Name-->
+                                <input type="name" class="form-control" id="name" placeholder="Enter task name here"
+                                       v-model="newTodo"
+                                       @keyup.enter="addTodo">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" action="#">
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <!--Name-->
-                        <input type="name" class="form-control" id="name" placeholder="Enter task name here"
-                               v-model="newTodo"
-                               @keyup.enter="addTodo">
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Tasks</h3>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">{{visibility}}</button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"  @click="setVisibility('all')">All</a></li>
+                                <li><a href="#"  @click="setVisibility('active')">Active</a></li>
+                                <li><a href="#/" @click="setVisibility('completed')">Completed</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Task</th>
+                                <th>Priority</th>
+                                <th>Done</th>
+                                <th>Progress</th>
+                                <th style="width: 40px">Label</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <todo v-for="(todo, index) in filteredTodos"
+                                  v-bind:todo="todo"
+                                  v-bind:index="index"
+                                  v-bind:from="from"
+                                  v-bind:page="page"
+                                  v-bind:fetchPage="fetchPage"
+                                  @todo-deleted="deleteTodo">
+                            </todo>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer clearfix">
+                        <span class="pull-left">Showing {{ from }} to {{ to }} of {{ total }} entries</span>
+
+                        <pagination
+                                :current-page="page"
+                                :items-per-page="perPage"
+                                :total-items="total"
+                                @page-changed="pageChanged"></pagination>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">Tasques</h3>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default">{{visibility}}</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"  @click="setVisibility('all')">All</a></li>
-                        <li><a href="#"  @click="setVisibility('active')">Active</a></li>
-                        <li><a href="#/" @click="setVisibility('completed')">Completed</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th style="width: 10px">#</th>
-                        <th>Task</th>
-                        <th>Priority</th>
-                        <th>Done</th>
-                        <th>Progress</th>
-                        <th style="width: 40px">Label</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                        <todo v-for="(todo, index) in filteredTodos"
-                              v-bind:todo="todo"
-                              v-bind:index="index"
-                              v-bind:from="from"
-                              v-bind:page="page"
-                              v-bind:fetchPage="fetchPage"
-                              @todo-deleted="deleteTodo">
-                        </todo>
-
-                    </tbody>
-
-                </table>
-            </div>
-            <!-- /.box-body -->
-
-            <div class="box-footer clearfix">
-                <span class="pull-left">Showing {{ from }} to {{ to }} of {{ total }} entries</span>
-
-                <pagination
-                        :current-page="page"
-                        :items-per-page="perPage"
-                        :total-items="total"
-                        @page-changed="pageChanged"></pagination>
             </div>
         </div>
     </div>
 </template>
-<script>
 
+<script>
 import Pagination from './Pagination.vue'
 import Todo from './Todo.vue'
 

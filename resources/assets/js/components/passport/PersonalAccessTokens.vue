@@ -10,36 +10,37 @@
 
 <template>
     <div>
-        <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span>
-                            Personal Access Tokens
-                        </span>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>
+                                Personal Access Tokens
+                            </span>
 
-                        <a class="action-link" @click="showCreateTokenForm">
-                            Create New Token
-                        </a>
+                            <a class="action-link" @click="showCreateTokenForm">
+                                Create New Token
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="panel-body">
-                    <!-- No Tokens Notice -->
-                    <p class="m-b-none" v-if="tokens.length === 0">
-                        You have not created any personal access tokens.
-                    </p>
+                    <div class="panel-body">
+                        <!-- No Tokens Notice -->
+                        <p class="m-b-none" v-if="tokens.length === 0">
+                            You have not created any personal access tokens.
+                        </p>
 
-                    <!-- Personal Access Tokens -->
-                    <table class="table table-borderless m-b-none" v-if="tokens.length > 0">
-                        <thead>
+                        <!-- Personal Access Tokens -->
+                        <table class="table table-borderless m-b-none" v-if="tokens.length > 0">
+                            <thead>
                             <tr>
                                 <th>Name</th>
                                 <th></th>
                             </tr>
-                        </thead>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
                             <tr v-for="token in tokens">
                                 <!-- Client Name -->
                                 <td style="vertical-align: middle;">
@@ -53,8 +54,9 @@
                                     </a>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
