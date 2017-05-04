@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'Illuminate\Auth\Events\Registered' => [
             'RogerForner\TodosBackend\Listeners\UserRegistered',
         ],
+        //Amb aquest esdevinemnt ens interessa escoltar si un usuari s'ha creat i, si és així, enviar-li un correu.
+        'RogerForner\TodosBackend\Events\NewUser' => [
+            'RogerForner\TodosBackend\SendWelcomeEmail',
+        ],
     ];
 
     /**

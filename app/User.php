@@ -27,6 +27,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Quan un nou objecte User sigui creat, s'executaran els mètodes de la classe NewUser, amb tots els processos
+     * que comporti aquesta.
+     *
+     * @var array
+     */
+    protected $events = [
+        'created' => Events\NewUser::class
+    ];
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array

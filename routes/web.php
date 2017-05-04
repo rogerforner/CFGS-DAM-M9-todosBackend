@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('messages', 'MessagesController@sendMessage');
     Route::get('user/messages', 'MessagesController@fetchMessages');
 
+    Route::resource('/emails', 'EmailController');
+
 });
 
 Route::get('/', function () {

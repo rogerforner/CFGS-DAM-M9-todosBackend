@@ -34,6 +34,7 @@ Menu::macro('sidebar', function () {
         ->add(Menu::adminlteSeparator('ACTIVITIES'))
         #adminlte_menu
         ->add(Link::toUrl('/messages', '<i class="fa fa-comments"></i><span>Chat</span>'))
+        ->add(Link::toUrl('/emails', '<i class="fa fa-envelope-o"></i><span>Email</span>'))
         ->add(Link::toUrl('/tasks', '<i class="fa fa-tasks"></i><span>Tasks</span>'))
         ->add(Link::toUrl('profile/tokens', '<i class="fa fa-key"></i><span>Tokens</span>'))
 
