@@ -104,7 +104,7 @@ class MessageSent extends Notification implements ShouldQueue
      */
     public function toTelegram($notifiable)
     {
-        $url = url('https://rogerforne.todosbackend2.2dam.acacha.org/');
+        $url = url('http://rogerforne.todosbackend2.2dam.acacha.org/');
         return TelegramMessage::create()
             ->to('@dam21617alum')
             ->content($this->message->message)// Markdown supported.

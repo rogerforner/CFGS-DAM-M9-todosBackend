@@ -70,5 +70,5 @@ window.io = io
 window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: window.Laravel.echoServerURL,
-    namespace: 'RogerForner.TodosBackend.Events'
+    namespace: 'RogerFornerTodosBackend.Events'
 });
