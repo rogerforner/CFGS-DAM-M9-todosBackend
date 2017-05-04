@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Middleware;
+namespace RogerFornerTodosBackend\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

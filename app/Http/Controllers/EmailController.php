@@ -1,11 +1,11 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
 use Mail;
-use RogerForner\TodosBackend\Mail\NewUserWelcome;
+use RogerFornerTodosBackend\Mail\NewUserWelcome;
 use Session;
 use function view;
 

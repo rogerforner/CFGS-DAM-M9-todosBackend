@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Repositories\Contracts;
+namespace RogerFornerTodosBackend\Repositories\Contracts;
 
 interface Repository
 {

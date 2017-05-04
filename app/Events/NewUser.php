@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Events;
+namespace RogerFornerTodosBackend\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -9,7 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\User;
 
 class NewUser
 {

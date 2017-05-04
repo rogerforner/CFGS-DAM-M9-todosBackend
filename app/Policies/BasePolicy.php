@@ -1,14 +1,14 @@
 <?php
 
-namespace RogerForner\TodosBackend\Policies;
+namespace RogerFornerTodosBackend\Policies;
 
-use RogerForner\TodosBackend\Task;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\Task;
+use RogerFornerTodosBackend\User;
 
 /**
  * Class BasePolicy.
  *
- * @package RogerForner\TodosBackend\Policies
+ * @package RogerFornerTodosBackend\Policies
  */
 abstract class BasePolicy
 {
@@ -16,7 +16,7 @@ abstract class BasePolicy
     /**
      * Determine whether the user can list the tasks.
      *
-     * @param  \RogerForner\TodosBackend\User  $user
+     * @param  \RogerFornerTodosBackend\User  $user
      * @return mixed
      */
     public function show(User $user)
@@ -26,8 +26,8 @@ abstract class BasePolicy
     /**
      * Determine whether the user can view the task.
      *
-     * @param  \RogerForner\TodosBackend\User  $user
-     * @param  \RogerForner\TodosBackend\Task  $task
+     * @param  \RogerFornerTodosBackend\User  $user
+     * @param  \RogerFornerTodosBackend\Task  $task
      * @return mixed
      */
     public function view(User $user, Task $task)
@@ -37,7 +37,7 @@ abstract class BasePolicy
     /**
      * Determine whether the user can create tasks.
      *
-     * @param  \RogerForner\TodosBackend\User  $user
+     * @param  \RogerFornerTodosBackend\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -47,8 +47,8 @@ abstract class BasePolicy
     /**
      * Determine whether the user can update the task.
      *
-     * @param  \RogerForner\TodosBackend\User  $user
-     * @param  \RogerForner\TodosBackend\Task  $task
+     * @param  \RogerFornerTodosBackend\User  $user
+     * @param  \RogerFornerTodosBackend\Task  $task
      * @return mixed
      */
     public function update(User $user, Task $task)
@@ -61,8 +61,8 @@ abstract class BasePolicy
     /**
      * Determine whether the user can delete the task.
      *
-     * @param  \RogerForner\TodosBackend\User  $user
-     * @param  \RogerForner\TodosBackend\Task  $task
+     * @param  \RogerFornerTodosBackend\User  $user
+     * @param  \RogerFornerTodosBackend\Task  $task
      * @return mixed
      */
     public function delete(User $user, Task $task)

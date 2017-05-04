@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Exceptions;
+namespace RogerFornerTodosBackend\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

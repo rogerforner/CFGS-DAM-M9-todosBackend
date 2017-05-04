@@ -179,11 +179,11 @@ return [
         /*
          * Application Service Providers...
          */
-        RogerForner\TodosBackend\Providers\AppServiceProvider::class,
-        RogerForner\TodosBackend\Providers\AuthServiceProvider::class,
-        // RogerForner\TodosBackend\Providers\BroadcastServiceProvider::class,
-        RogerForner\TodosBackend\Providers\EventServiceProvider::class,
-        RogerForner\TodosBackend\Providers\RouteServiceProvider::class,
+        RogerFornerTodosBackend\Providers\AppServiceProvider::class,
+        RogerFornerTodosBackend\Providers\AuthServiceProvider::class,
+        // RogerFornerTodosBackend\Providers\BroadcastServiceProvider::class,
+        RogerFornerTodosBackend\Providers\EventServiceProvider::class,
+        RogerFornerTodosBackend\Providers\RouteServiceProvider::class,
 
         /*
          * Acacha Llum Service Providers...

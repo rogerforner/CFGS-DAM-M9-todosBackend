@@ -1,10 +1,10 @@
 <?php
 
 
-use RogerForner\TodosBackend\Task;
+use RogerFornerTodosBackend\Task;
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'can:show,RogerForner\TodosBackend\Task'], function () {
+    Route::group(['middleware' => 'can:show,RogerFornerTodosBackend\Task'], function () {
         Route::get('/tasks', function () {
             return view('tasks');
         });
@@ -15,7 +15,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::get('users', function () {
-        dd(RogerForner\TodosBackend\User::paginate());
+        dd(RogerFornerTodosBackend\User::paginate());
     });
 
     #adminlte_routes

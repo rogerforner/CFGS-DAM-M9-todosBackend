@@ -72,7 +72,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => RogerForner\TodosBackend\User::class,
+            'model'  => RogerFornerTodosBackend\User::class,
         ],
 
         // 'users' => [

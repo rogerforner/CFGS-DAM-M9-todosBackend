@@ -1,9 +1,9 @@
 <?php
 
-namespace RogerForner\TodosBackend\Events;
+namespace RogerFornerTodosBackend\Events;
 
-use RogerForner\TodosBackend\Message;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\Message;
+use RogerFornerTodosBackend\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Notifications\Notification;
 use Illuminate\Queue\SerializesModels;

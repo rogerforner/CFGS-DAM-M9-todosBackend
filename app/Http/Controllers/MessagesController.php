@@ -1,10 +1,10 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
-use RogerForner\TodosBackend\Events\MessageSent;
-use RogerForner\TodosBackend\Notifications\MessageSent as MessageSentNotification;
-use RogerForner\TodosBackend\Message;
+use RogerFornerTodosBackend\Events\MessageSent;
+use RogerFornerTodosBackend\Notifications\MessageSent as MessageSentNotification;
+use RogerFornerTodosBackend\Message;
 use Auth;
 use Illuminate\Http\Request;
 

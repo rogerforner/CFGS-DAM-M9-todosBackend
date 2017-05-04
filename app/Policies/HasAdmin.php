@@ -1,11 +1,11 @@
 <?php
 
-namespace RogerForner\TodosBackend\Policies;
+namespace RogerFornerTodosBackend\Policies;
 
 /**
  * Class HasAdmin.
  *
- * @package RogerForner\TodosBackend\Policies
+ * @package RogerFornerTodosBackend\Policies
  */
 trait HasAdmin
 {

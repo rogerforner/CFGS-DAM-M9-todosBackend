@@ -1270,7 +1270,7 @@ namespace Illuminate\Support\Facades {
         public static function handle($input, $output = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RogerForner\TodosBackend\Console\Kernel::handle($input, $output);
+            return \RogerFornerTodosBackend\Console\Kernel::handle($input, $output);
         }
         
         /**
@@ -1284,7 +1284,7 @@ namespace Illuminate\Support\Facades {
         public static function terminate($input, $status)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RogerForner\TodosBackend\Console\Kernel::terminate($input, $status);
+            \RogerFornerTodosBackend\Console\Kernel::terminate($input, $status);
         }
         
         /**
@@ -1298,7 +1298,7 @@ namespace Illuminate\Support\Facades {
         public static function command($signature, $callback)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RogerForner\TodosBackend\Console\Kernel::command($signature, $callback);
+            return \RogerFornerTodosBackend\Console\Kernel::command($signature, $callback);
         }
         
         /**
@@ -1311,7 +1311,7 @@ namespace Illuminate\Support\Facades {
         public static function registerCommand($command)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RogerForner\TodosBackend\Console\Kernel::registerCommand($command);
+            \RogerFornerTodosBackend\Console\Kernel::registerCommand($command);
         }
         
         /**
@@ -1326,7 +1326,7 @@ namespace Illuminate\Support\Facades {
         public static function call($command, $parameters = array(), $outputBuffer = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RogerForner\TodosBackend\Console\Kernel::call($command, $parameters, $outputBuffer);
+            return \RogerFornerTodosBackend\Console\Kernel::call($command, $parameters, $outputBuffer);
         }
         
         /**
@@ -1340,7 +1340,7 @@ namespace Illuminate\Support\Facades {
         public static function queue($command, $parameters = array())
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RogerForner\TodosBackend\Console\Kernel::queue($command, $parameters);
+            \RogerFornerTodosBackend\Console\Kernel::queue($command, $parameters);
         }
         
         /**
@@ -1352,7 +1352,7 @@ namespace Illuminate\Support\Facades {
         public static function all()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RogerForner\TodosBackend\Console\Kernel::all();
+            return \RogerFornerTodosBackend\Console\Kernel::all();
         }
         
         /**
@@ -1364,7 +1364,7 @@ namespace Illuminate\Support\Facades {
         public static function output()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RogerForner\TodosBackend\Console\Kernel::output();
+            return \RogerFornerTodosBackend\Console\Kernel::output();
         }
         
         /**
@@ -1376,7 +1376,7 @@ namespace Illuminate\Support\Facades {
         public static function bootstrap()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RogerForner\TodosBackend\Console\Kernel::bootstrap();
+            \RogerFornerTodosBackend\Console\Kernel::bootstrap();
         }
         
         /**
@@ -1389,7 +1389,7 @@ namespace Illuminate\Support\Facades {
         public static function setArtisan($artisan)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RogerForner\TodosBackend\Console\Kernel::setArtisan($artisan);
+            \RogerFornerTodosBackend\Console\Kernel::setArtisan($artisan);
         }
         
     }         
@@ -1547,7 +1547,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \RogerForner\TodosBackend\User|null
+         * @return \RogerFornerTodosBackend\User|null
          * @static 
          */
         public static function user()
@@ -1582,7 +1582,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \RogerForner\TodosBackend\User|false
+         * @return \RogerFornerTodosBackend\User|false
          * @static 
          */
         public static function onceUsingId($id)
@@ -1646,7 +1646,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \RogerForner\TodosBackend\User|false
+         * @return \RogerFornerTodosBackend\User|false
          * @static 
          */
         public static function loginUsingId($id, $remember = false)
@@ -1693,7 +1693,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \RogerForner\TodosBackend\User
+         * @return \RogerFornerTodosBackend\User
          * @static 
          */
         public static function getLastAttempted()
@@ -1818,7 +1818,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \RogerForner\TodosBackend\User|null
+         * @return \RogerFornerTodosBackend\User|null
          * @static 
          */
         public static function getUser()
@@ -1864,7 +1864,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \RogerForner\TodosBackend\User
+         * @return \RogerFornerTodosBackend\User
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */

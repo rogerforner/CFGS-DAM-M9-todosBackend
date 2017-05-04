@@ -1,16 +1,16 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
-use RogerForner\TodosBackend\Repositories\UserTasksRepository;
-use RogerForner\TodosBackend\Transformers\TaskTransformer;
-use RogerForner\TodosBackend\Task;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\Repositories\UserTasksRepository;
+use RogerFornerTodosBackend\Transformers\TaskTransformer;
+use RogerFornerTodosBackend\Task;
+use RogerFornerTodosBackend\User;
 use Illuminate\Http\Request;
 
 /**
  * Class UserTasksController
- * @package RogerForner\TodosBackend\Http\Controllers
+ * @package RogerFornerTodosBackend\Http\Controllers
  */
 class UserTasksController extends Controller
 {

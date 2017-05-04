@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Transformers\Contracts;
+namespace RogerFornerTodosBackend\Transformers\Contracts;
 
 interface Transformer
 {

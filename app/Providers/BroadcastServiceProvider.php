@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Providers;
+namespace RogerFornerTodosBackend\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;

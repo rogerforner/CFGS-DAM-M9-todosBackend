@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Mail;
+namespace RogerFornerTodosBackend\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

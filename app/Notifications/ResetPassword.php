@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Notifications;
+namespace RogerFornerTodosBackend\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;

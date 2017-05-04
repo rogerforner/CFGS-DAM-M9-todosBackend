@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Middleware;
+namespace RogerFornerTodosBackend\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

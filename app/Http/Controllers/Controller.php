@@ -1,8 +1,8 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
-use RogerForner\TodosBackend\Transformers\Contracts\Transformer;
+use RogerFornerTodosBackend\Transformers\Contracts\Transformer;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

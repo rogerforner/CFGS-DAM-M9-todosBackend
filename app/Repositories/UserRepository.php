@@ -1,9 +1,9 @@
 <?php
 
-namespace RogerForner\TodosBackend\Repositories;
+namespace RogerFornerTodosBackend\Repositories;
 
-use \RogerForner\TodosBackend\Repositories\Contracts\Repository;
-use RogerForner\TodosBackend\User;
+use \RogerFornerTodosBackend\Repositories\Contracts\Repository;
+use RogerFornerTodosBackend\User;
 
 class UserRepository implements Repository
 {

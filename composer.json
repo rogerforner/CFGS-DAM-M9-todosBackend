@@ -33,7 +33,7 @@
             "database"
         ],
         "psr-4": {
-            "RogerForner\\TodosBackend\\": "app/"
+            "RogerFornerTodosBackend\\": "app/"
         }
     },
     "autoload-dev": {

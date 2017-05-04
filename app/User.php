@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend;
+namespace RogerFornerTodosBackend;
 
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;

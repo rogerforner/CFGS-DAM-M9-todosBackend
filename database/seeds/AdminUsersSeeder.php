@@ -22,7 +22,7 @@ class AdminUsersSeeder extends Seeder
              * Guardem la factoria en la variable $user per tal de poder-li
              * assignar el rol que crearem més endavant.
              */
-            $user = factory(RogerForner\TodosBackend\User::class)->create([
+            $user = factory(RogerFornerTodosBackend\User::class)->create([
                     "name" => "Roger Forner Fabre",
                     "email" => "sir.rogerforner@gmail.com",
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]

@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Providers;
+namespace RogerFornerTodosBackend\Providers;
 
 use Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -10,7 +10,7 @@ use Route;
 /**
  * Class AuthServiceProvider.
  *
- * @package RogerForner\TodosBackend\Providers
+ * @package RogerFornerTodosBackend\Providers
  */
 class AuthServiceProvider extends ServiceProvider
 {
@@ -20,8 +20,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'RogerForner\TodosBackend\Task' => 'RogerForner\TodosBackend\Policies\TaskPolicy',
-        //'RogerForner\TodosBackend\User'
+        'RogerFornerTodosBackend\Task' => 'RogerFornerTodosBackend\Policies\TaskPolicy',
+        //'RogerFornerTodosBackend\User'
     ];
 
     /**

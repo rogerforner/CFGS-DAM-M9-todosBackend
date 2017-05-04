@@ -1,9 +1,9 @@
 <?php
 
-namespace RogerForner\TodosBackend\Notifications;
+namespace RogerFornerTodosBackend\Notifications;
 
-use RogerForner\TodosBackend\Message;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\Message;
+use RogerFornerTodosBackend\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;

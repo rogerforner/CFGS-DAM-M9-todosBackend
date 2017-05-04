@@ -1,10 +1,10 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
-use RogerForner\TodosBackend\Repositories\TaskRepository;
-use RogerForner\TodosBackend\Task;
-use RogerForner\TodosBackend\Transformers\TaskTransformer;
+use RogerFornerTodosBackend\Repositories\TaskRepository;
+use RogerFornerTodosBackend\Task;
+use RogerFornerTodosBackend\Transformers\TaskTransformer;
 use Auth;
 use Gate;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 /**
  * Class TasksController
  *
- * @package RogerForner\TodosBackend\Http\Controllers
+ * @package RogerFornerTodosBackend\Http\Controllers
  */
 class TasksController extends Controller
 {
@@ -44,11 +44,11 @@ class TasksController extends Controller
     public function index(Request $request)
     {
 //        $user = Auth::user();
-//        if ($user->can('show', \RogerForner\TodosBackend\Task::class)) {
+//        if ($user->can('show', \RogerFornerTodosBackend\Task::class)) {
 //            //
 //        }
 
-        //$this->authorize('show-task', \RogerForner\TodosBackend\Task::class);
+        //$this->authorize('show-task', \RogerFornerTodosBackend\Task::class);
 
         // The current user can update the post...
         $tasks = Task::paginate(15);

@@ -1,16 +1,16 @@
 <?php
 
-namespace RogerForner\TodosBackend\Http\Controllers;
+namespace RogerFornerTodosBackend\Http\Controllers;
 
-use RogerForner\TodosBackend\Events\GcmTokenCreated;
+use RogerFornerTodosBackend\Events\GcmTokenCreated;
 use Auth;
 use Illuminate\Http\Request;
-use RogerForner\TodosBackend\Http\Controllers\TodosBaseController;
+use RogerFornerTodosBackend\Http\Controllers\TodosBaseController;
 
 /**
  * Class GcmTokensController.
  *
- * @package RogerForner\TodosBackend\Http\Controllers
+ * @package RogerFornerTodosBackend\Http\Controllers
  */
 class GcmTokensController extends TodosBaseController
 {

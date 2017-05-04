@@ -1,14 +1,14 @@
 <?php
 
-namespace RogerForner\TodosBackend\Transformers;
+namespace RogerFornerTodosBackend\Transformers;
 
-use RogerForner\TodosBackend\Exceptions\IncorrectModelException;
+use RogerFornerTodosBackend\Exceptions\IncorrectModelException;
 
 class UserTransformer extends Transformer
 {
     public function transform($resource)
     {
-        if (!$resource instanceof \RogerForner\TodosBackend\Task) {
+        if (!$resource instanceof \RogerFornerTodosBackend\Task) {
             throw new IncorrectModelException();
         }
 

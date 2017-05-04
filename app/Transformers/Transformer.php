@@ -1,8 +1,8 @@
 <?php
 
-namespace RogerForner\TodosBackend\Transformers;
+namespace RogerFornerTodosBackend\Transformers;
 
-use \RogerForner\TodosBackend\Transformers\Contracts\Transformer as TransformerContract;
+use \RogerFornerTodosBackend\Transformers\Contracts\Transformer as TransformerContract;
 
 abstract class Transformer implements TransformerContract {
     public function transformCollection($resources) {

@@ -1,9 +1,9 @@
 <?php
 
-namespace RogerForner\TodosBackend\Repositories;
+namespace RogerFornerTodosBackend\Repositories;
 
-use RogerForner\TodosBackend\Task;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\Task;
+use RogerFornerTodosBackend\User;
 
 class UserTasksRepository
 {

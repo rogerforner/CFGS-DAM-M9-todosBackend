@@ -1,6 +1,6 @@
 <?php
 
-namespace RogerForner\TodosBackend\Listeners;
+namespace RogerFornerTodosBackend\Listeners;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Queue\InteractsWithQueue;

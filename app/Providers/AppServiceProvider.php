@@ -1,8 +1,8 @@
 <?php
 
-namespace RogerForner\TodosBackend\Providers;
+namespace RogerFornerTodosBackend\Providers;
 
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

@@ -1,14 +1,14 @@
 <?php
 
-namespace RogerForner\TodosBackend\Transformers;
+namespace RogerFornerTodosBackend\Transformers;
 
-use RogerForner\TodosBackend\Exceptions\IncorrectModelException;
-use RogerForner\TodosBackend\Task;
+use RogerFornerTodosBackend\Exceptions\IncorrectModelException;
+use RogerFornerTodosBackend\Task;
 
 /**
  * Class TaskTransformer.
  *
- * @package RogerForner\TodosBackend\Transformers
+ * @package RogerFornerTodosBackend\Transformers
  */
 class TaskTransformer extends Transformer
 {

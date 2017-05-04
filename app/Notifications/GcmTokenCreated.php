@@ -1,9 +1,9 @@
 <?php
 
-namespace RogerForner\TodosBackend\Notifications;
+namespace RogerFornerTodosBackend\Notifications;
 
-use RogerForner\TodosBackend\GcmToken;
-use RogerForner\TodosBackend\User;
+use RogerFornerTodosBackend\GcmToken;
+use RogerFornerTodosBackend\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Notifications\Notification;
 use Illuminate\Queue\SerializesModels;

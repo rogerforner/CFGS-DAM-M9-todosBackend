@@ -1,11 +1,11 @@
 <?php
 
-namespace RogerForner\TodosBackend;
+namespace RogerFornerTodosBackend;
 
-use RogerForner\TodosBackend\Events\NewUser;
+use RogerFornerTodosBackend\Events\NewUser;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use RogerForner\TodosBackend\Mail\NewUserWelcome;
+use RogerFornerTodosBackend\Mail\NewUserWelcome;
 use Mail;
 
 class SendWelcomeEmail
