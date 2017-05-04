@@ -1,4 +1,4 @@
-# Todos backend <small>and others</small>
+# Todos backend and others
 
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/acacha/todosBackend)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/acacha/todosBackend)
@@ -10,7 +10,7 @@ Respository of an API that implements CRUD operations of todos and users.
 
 FrontEnd project with vue.js.
 
-##Installation
+## Installation
 
 Clone the repository via github:
 
@@ -53,7 +53,7 @@ Generate the passport keys:
 $ php artisan passport:keys
 ```
 
-##Usage
+## Usage
 
 You can set up the database through:
 
